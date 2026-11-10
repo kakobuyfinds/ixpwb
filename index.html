@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>OOTDBuy spreadsheet – produktlänkar, mått och QC-bilder</title>
+  <meta name="description" content="Svensk guide till OOTDBuy spreadsheet. Hitta rätt kategori, granska produktlänkar och QC-bilder, jämför mått och uppskatta frakten till Sverige.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#eef5f6">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="sv_SE">
+  <meta property="og:title" content="OOTDBuy spreadsheet – produktlänkar, mått och QC-bilder">
+  <meta property="og:description" content="En svensk guide till produktlänkar, storlekar, QC-foton och frakt. Bläddra bland tio produktkategorier på HipobuyFind.">
+  <meta property="og:image" content="https://i.ebayimg.com/images/g/SpIAAeSwtz5p~e~X/s-l500.webp">
+  <meta property="og:image:alt" content="Vit Nike Air Force 1 ’07 fotograferad från sidan">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%2032%2032%27%3E%3Crect%20width=%2732%27%20height=%2732%27%20rx=%276%27%20fill=%27%23153642%27/%3E%3Cpath%20d=%27M9%208v16m14-16v16M9%2016h14%27%20stroke=%27%23ffd0a0%27%20stroke-width=%273%27/%3E%3C/svg%3E">
+  <style>
+    :root{color-scheme:light;--bg:#eef5f6;--ink:#142f3b;--muted:#435c65;--line:#a8bfc5;--white:#fff;--rust:#953b2d;--dark:#153642;--amber:#ffd0a0}
+    *,*::before,*::after{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font:1rem/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    a{color:inherit;text-underline-offset:.22em}
+    a:focus-visible{outline:3px solid var(--rust);outline-offset:4px}
+    h1,h2,h3,p,figure,dl{margin:0}
+    img{display:block;max-width:100%}
+    h1,h2,h3{line-height:1.13;text-wrap:balance}
+    h1{font-size:clamp(2.35rem,7vw,5rem);letter-spacing:-.065em;overflow-wrap:anywhere}
+    h2{font-size:clamp(1.65rem,4vw,2.65rem);letter-spacing:-.04em}
+    h3{font-size:1.25rem}
+    .wrap{width:min(70rem,calc(100% - 2rem));margin-inline:auto}
+    .mast{border-bottom:1px solid var(--line)}
+    .mast .wrap,.foot .wrap{display:flex;justify-content:space-between;align-items:center;gap:.5rem 1rem;flex-wrap:wrap;padding-block:1rem}
+    .brand{font-size:1.05rem;font-weight:800;text-decoration:none}
+    .kicker{color:var(--rust);font-size:.79rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+    .mast .kicker{color:var(--muted)}
+    .hero{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);align-items:center;gap:clamp(1rem,5vw,4rem);padding-block:clamp(1.7rem,5vw,3.8rem) 1.5rem}
+    .hero h1{margin:.35rem 0 .7rem}
+    .intro{max-width:58ch;color:var(--muted);font-size:1.07rem}
+    .cta{display:inline-flex;align-items:center;min-height:44px;margin-top:.95rem;padding:.55rem .9rem;border-radius:.35rem;background:var(--rust);color:var(--white);font-weight:750;text-decoration:none}
+    .cta:hover{background:#742c22}
+    .hero figure{background:var(--white);border:1px solid var(--line);border-radius:.6rem;overflow:hidden}
+    .hero img{width:100%;height:clamp(9rem,23vw,17rem);object-fit:contain}
+    figcaption{font-size:.87rem;color:var(--muted);padding:.5rem .7rem;border-top:1px solid var(--line)}
+    .browse{padding:1.15rem 0 1.65rem;border-top:1px solid var(--line)}
+    .browse h2,.section-head h2{margin:.25rem 0 .45rem}
+    .section-head p,.browse p{color:var(--muted);max-width:68ch}
+    .cats{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,11rem),1fr));gap:.45rem;margin:.8rem 0 0;padding:0}
+    .cats a{display:flex;justify-content:space-between;align-items:center;gap:.45rem;min-height:44px;height:100%;padding:.55rem .75rem;background:var(--white);border:1px solid var(--line);border-radius:.35rem;text-decoration:none;font-weight:700}
+    .cats a:hover{border-color:var(--rust);color:var(--rust)}
+    .cats span{color:var(--rust)}
+    .method{background:var(--dark);color:var(--white);padding-block:clamp(1.7rem,5vw,3rem)}
+    .method .kicker{color:var(--amber)}
+    .method h2{margin:.25rem 0 1rem}
+    .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem;margin:0;padding:0;list-style:none}
+    .steps li{border-top:1px solid #6e909b;padding-top:.65rem}
+    .steps span{color:var(--amber);font-size:.82rem;font-weight:800;letter-spacing:.09em}
+    .steps h3{margin:.25rem 0 .35rem}
+    .steps p{color:#e1edf0}
+    .block{padding-block:clamp(1.7rem,5vw,3.1rem);border-bottom:1px solid var(--line)}
+    .articles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem;margin-top:1rem}
+    .articles article{background:var(--white);border-top:3px solid var(--rust);padding:1rem}
+    .articles h3{margin:.2rem 0 .55rem}
+    .articles p+p{margin-top:.65rem}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,11rem),1fr));gap:.7rem;margin-top:1rem}
+    .gallery figure{min-width:0;background:var(--white);border:1px solid var(--line);border-radius:.35rem;overflow:hidden}
+    .gallery img{width:100%;height:auto;aspect-ratio:1;object-fit:contain}
+    .faq{max-width:52rem;margin-top:1rem}
+    .faq div{border-top:1px solid var(--line);padding:.75rem 0}
+    .faq dt{font-weight:800}
+    .faq dd{margin:.2rem 0 0;color:var(--muted)}
+    .foot{color:var(--muted);font-size:.9rem}
+    @media(max-width:43rem){.hero,.articles,.steps{grid-template-columns:1fr}.hero img{height:11rem}.hero{gap:1rem}}
+    @media(max-width:26rem){.cats,.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.cats a{font-size:.9rem}}
+  </style>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "inLanguage": "sv",
+      "name": "OOTDBuy spreadsheet – produktlänkar, mått och QC-bilder",
+      "description": "Svensk guide till OOTDBuy spreadsheet. Hitta rätt kategori, granska produktlänkar och QC-bilder, jämför mått och uppskatta frakten till Sverige.",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Vad är ett OOTDBuy spreadsheet?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Det är en sammanställning av produktlänkar som kan innehålla foton, mått och prisuppgifter. Använd listan för att hitta alternativ och kontrollera uppgifterna på den aktuella produktsidan."}
+        },
+        {
+          "@type": "Question",
+          "name": "Vad visar QC-bilder?",
+          "acceptedAnswer": {"@type": "Answer", "text": "QC-bilder är foton som används vid kvalitetskontroll. De kan visa synliga detaljer som sömmar, etiketter och skick. För att bedöma din variant behöver fotona visa samma storlek och utförande."}
+        },
+        {
+          "@type": "Question",
+          "name": "Hur jämför jag två olika storlekstabeller?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Jämför samma mått i centimeter och kontrollera om tabellerna visar kroppsmått eller plaggets mått. För skor, kontrollera om siffran gäller fotlängd eller innersulans längd."}
+        },
+        {
+          "@type": "Question",
+          "name": "Hur uppskattar jag fraktkostnaden till Sverige?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Ta reda på paketets vikt och mått och be om en uppskattning för din adress. Kontrollera hur frakten beräknas och vilka avgifter som ingår i totalen."}
+        },
+        {
+          "@type": "Question",
+          "name": "Vart leder kategorilänkarna?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Kategorilänkarna öppnar respektive avdelning på HipobuyFind. Den här sidan är en fristående guide."}
+        }
+      ]
+    }
+  </script>
+<link rel="canonical" href="https://kakobuyfinds.github.io/ixpwb/">
+</head>
+<body>
+  <!-- Google visade en åtkomstspärr. Sökunderlaget är ett urval från tio webbplatser utan verifierad Google-rangordning.
+       Repsheet och OOTDBuy.org visar listor. OOTDBuy.net och OOTDBuySheet.net täcker jämförelser och köpsteg.
+       OOTDBuyFind.com och OOTDBuySpreadsheetX.com fokuserar på produktlänkar och kategorier.
+       OOTDBuy.app och OOTDBuyB.com tar upp QC och produktbilder. OOTDBuyLinks.com och OOTDBuySpreadsheet.us beskriver källor och beställningsflöden.
+       Publiceringsadressen är okänd, så sidan anger ingen kanonisk adress. -->
+  <header class="mast">
+    <div class="wrap">
+      <a class="brand" href="https://www.hipobuyfind.com">hipobuyfind.com</a>
+      <span class="kicker">Svensk köpguide</span>
+    </div>
+  </header>
+  <main>
+    <section class="hero wrap" aria-labelledby="page-title">
+      <div>
+        <p class="kicker">Från produktlänk till kortlista</p>
+        <h1 id="page-title">OOTDBuy spreadsheet</h1>
+        <p class="intro">Ett OOTDBuy spreadsheet samlar produktlänkar så att du kan jämföra alternativ i samma kategori. Börja med att se om länken visar rätt variant. Jämför sedan mått, QC-bilder och uppskattad frakt innan du sparar dina favoriter.</p>
+        <a class="cta" href="https://www.hipobuyfind.com">Öppna HipobuyFind</a>
+      </div>
+      <figure>
+        <img src="https://i.ebayimg.com/images/g/SpIAAeSwtz5p~e~X/s-l500.webp" alt="Vit Nike Air Force 1 ’07 fotograferad från sidan" width="500" height="500" loading="eager" fetchpriority="high">
+        <figcaption>Bildexempel · Nike Air Force 1 ’07</figcaption>
+      </figure>
+    </section>
+
+    <nav class="browse wrap" aria-labelledby="categories-title">
+      <p class="kicker">10 ingångar</p>
+      <h2 id="categories-title">Bläddra efter kategori</h2>
+      <p>Välj samma kategori för båda alternativen när du vill jämföra passform och detaljer.</p>
+      <ul class="cats">
+        <li><a href="https://hipobuyfind.com/category-911-Shoes.html">Skor <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://hipobuyfind.com/category-912-Hoodies%2FSweaters.html">Hoodies och tröjor <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://hipobuyfind.com/category-913-T-Shirts.html">T-shirts <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://hipobuyfind.com/category-914-Jackets.html">Jackor <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://hipobuyfind.com/category-915-Pants%2FShorts.html">Byxor och shorts <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://hipobuyfind.com/category-916-Headwear.html">Kepsar och mössor <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://hipobuyfind.com/category-917-Sets.html">Matchande set <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://hipobuyfind.com/category-918-underwear%2Funderpants.html">Underkläder <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://hipobuyfind.com/category-919-Jersey.html">Matchtröjor <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://hipobuyfind.com/category-920-Accessories.html">Accessoarer <span aria-hidden="true">↗</span></a></li>
+      </ul>
+    </nav>
+
+    <section class="method" aria-labelledby="method-title">
+      <div class="wrap">
+        <p class="kicker">Checklista för produktjämförelse</p>
+        <h2 id="method-title">Så granskar du en rad i listan</h2>
+        <ol class="steps">
+          <li><span aria-hidden="true">01</span><h3>Öppna produktlänken</h3><p>Jämför produktnamn, modellkod och färgvariant med uppgifterna i listan. Skriv ner när du senast kontrollerade säljarens produktsida.</p></li>
+          <li><span aria-hidden="true">02</span><h3>Matcha foto och mått</h3><p>Läs storlekstabellen i centimeter. Kontrollera att QC-foton visar samma storlek och färg som du har valt och att måttbandets nollpunkt syns på mätbilden.</p></li>
+          <li><span aria-hidden="true">03</span><h3>Räkna på hela paketet</h3><p>Spara varupriset och notera paketvikt, fraktpris och eventuella avgifter. Jämför kostnaden i svenska kronor med samma växelkurs för båda alternativen.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="block wrap" aria-labelledby="articles-title">
+      <div class="section-head">
+        <p class="kicker">Fyra korta guider</p>
+        <h2 id="articles-title">Från jämförelse till köpbeslut</h2>
+        <p>Om ett alternativ saknar rätt mått eller bilder, markera vad du behöver få bekräftat innan du jämför det med resten av listan.</p>
+      </div>
+      <div class="articles">
+        <article>
+          <p class="kicker">Länkar</p>
+          <h3>Produktlänkar i ett OOTDBuy spreadsheet</h3>
+          <p>En länk kan fortfarande öppnas efter att säljaren har ändrat annonsen. Jämför därför modellkod, produktbilder och valbar storlek med den rad du sparade. Om en länk visar flera modeller, anteckna vilken variant du jämför.</p>
+          <p>Ta exempelvis två jackor med samma användningsområde. Spara en rad per jacka med material, variant, storlek och datum. Då kan du se om ett nytt pris gäller samma jacka eller ett annat utförande.</p>
+        </article>
+        <article>
+          <p class="kicker">Storlek</p>
+          <h3>Storleksguide för skor och plagg</h3>
+          <p>För sneakers, mät båda fötterna och använd den längre fotens mått. Kontrollera om storleksguiden för skor anger rekommenderad fotlängd eller innersulans längd. En jämförelse av EU-storlekar blir mer användbar när du också har rätt centimetermått.</p>
+          <p>Lägg en hoodie som sitter bra plant och mät bröstbredd, ärmlängd och plagglängd. För byxor, jämför midjemått och innerbenslängd. Se upp när en tabell anger bredd och den andra omkrets.</p>
+        </article>
+        <article>
+          <p class="kicker">Kvalitetskontroll</p>
+          <h3>Vad du kan läsa ut av QC-bilder</h3>
+          <p>När du granskar QC-bilder för skor, be om vyer av tåparti, häl och yttersula. För en keps, titta efter broderiets placering och hur spännet sitter. På en väska eller ett halsband kan en närbild göra det lättare att bedöma kanter, infästningar och lås.</p>
+          <p>Om färgtonen varierar mellan bilder, be om ett foto i neutralt ljus. Håll isär katalogens produktfoto och fotot av exemplaret som granskats.</p>
+        </article>
+        <article>
+          <p class="kicker">Leverans</p>
+          <h3>Frakt till Sverige och uppskattad totalkostnad</h3>
+          <p>Jämför fraktalternativ för din adress när du har paketets mått och uppskattade vikt. Kontrollera om priset räknas på faktisk vikt eller volymvikt. En skokartong kan påverka måtten även om den väger lite.</p>
+          <p>Skriv upp varupris, eventuell inrikesfrakt, internationell frakt och avgifter var för sig. Kontrollera vilka poster som ingår i priset och vilka som betalas separat innan du summerar.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="block wrap" aria-labelledby="photos-title">
+      <div class="section-head">
+        <p class="kicker">Bildexempel</p>
+        <h2 id="photos-title">Detaljer att titta efter</h2>
+        <p>Produktbilderna visar exempel på passform, mönster och detaljer att jämföra. För aktuellt utbud, öppna kategorierna på HipobuyFind.</p>
+      </div>
+      <div class="gallery">
+        <figure>
+          <img src="https://static.nike.com.cn/a/images/t_web_pw_592_v2/f_auto/de7c1864-0827-4cdd-8f71-b3c575371a8a/AS%2BM%2BNK%2BCLUB%2BBB%2BPO%2BHOODIE.png" alt="Modell i ljusgrå Nike Club Fleece-hoodie med känguruficka" width="1184" height="1184" loading="lazy" decoding="async">
+          <figcaption>Nike · Huvans form och ärmslut</figcaption>
+        </figure>
+        <figure>
+          <img src="https://media.gucci.com/style/DarkGray_Center_0_0_490x490/1717689663/789016_4HBCP_1066_001_100_0000_Light-casquette-en-toilegg.jpg" alt="Svart Gucci-keps med tonat GG-mönster och böjd skärm" width="490" height="490" loading="lazy" decoding="async">
+          <figcaption>Gucci · Skärmens form</figcaption>
+        </figure>
+        <figure>
+          <img src="https://www.fashionphile.com/cdn/shop/files/3c23586f09b6e1e9cf5f738c46ce7476.jpg?v=1776971082&amp;width=480" alt="Brun Louis Vuitton Speedy 25-väska med monogram och ljusa handtag" width="480" height="480" loading="lazy" decoding="async">
+          <figcaption>Louis Vuitton · Handtagens infästning</figcaption>
+        </figure>
+        <figure>
+          <img src="https://www.luxe-em.com/cdn/shop/files/001_295e1ddb-29ff-4d08-b03e-9c2cb37ce901.jpg?v=1759779180&amp;width=480" alt="Mönstrad fyrkantig Hermès-sidenscarf" width="480" height="480" loading="lazy" decoding="async">
+          <figcaption>Hermès · Mönster och kant</figcaption>
+        </figure>
+        <figure>
+          <img src="https://assets.christiandior.com/is/image/diorprod/N2241WOMCYD03S_E01-2?%24default_GH%24=&amp;bfc=on&amp;crop=430%2C346%2C1124%2C1235&amp;extend=0%2C0%2C0%2C250&amp;hei=520&amp;qlt=76&amp;scale=0.875&amp;wid=480" alt="Guldfärgat Dior Petit CD-halsband med kristalldetaljer" width="480" height="520" loading="lazy" decoding="async">
+          <figcaption>Dior · Kedja och berlock</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="block wrap" aria-labelledby="faq-title">
+      <div class="section-head">
+        <p class="kicker">Korta svar</p>
+        <h2 id="faq-title">Vanliga frågor</h2>
+      </div>
+      <dl class="faq">
+        <div>
+          <dt>Vad är ett OOTDBuy spreadsheet?</dt>
+          <dd>Det är en sammanställning av produktlänkar som kan innehålla foton, mått och prisuppgifter. Använd listan för att hitta alternativ och kontrollera uppgifterna på den aktuella produktsidan.</dd>
+        </div>
+        <div>
+          <dt>Vad visar QC-bilder?</dt>
+          <dd>QC-bilder är foton som används vid kvalitetskontroll. De kan visa synliga detaljer som sömmar, etiketter och skick. För att bedöma din variant behöver fotona visa samma storlek och utförande.</dd>
+        </div>
+        <div>
+          <dt>Hur jämför jag två olika storlekstabeller?</dt>
+          <dd>Jämför samma mått i centimeter och kontrollera om tabellerna visar kroppsmått eller plaggets mått. För skor, kontrollera om siffran gäller fotlängd eller innersulans längd.</dd>
+        </div>
+        <div>
+          <dt>Hur uppskattar jag fraktkostnaden till Sverige?</dt>
+          <dd>Ta reda på paketets vikt och mått och be om en uppskattning för din adress. Kontrollera hur frakten beräknas och vilka avgifter som ingår i totalen.</dd>
+        </div>
+        <div>
+          <dt>Vart leder kategorilänkarna?</dt>
+          <dd>Kategorilänkarna öppnar respektive avdelning på HipobuyFind. Den här sidan är en fristående guide.</dd>
+        </div>
+      </dl>
+    </section>
+  </main>
+  <footer class="foot">
+    <div class="wrap">
+      <p>Fristående svensk guide · Varumärkena visas som bildexempel.</p>
+      <a href="https://www.hipobuyfind.com">Till hipobuyfind.com</a>
+    </div>
+  </footer>
+</body>
+</html>
